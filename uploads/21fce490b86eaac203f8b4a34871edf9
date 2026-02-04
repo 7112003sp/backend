@@ -1,0 +1,3 @@
+transactionId,amount,referenceNumber,date
+TXN101,500,REF101,2024-01-01
+TXN102,700,REF102,2024-01-02
