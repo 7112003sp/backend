@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import uploadRoutes from "./routes/upload.js";
+import uploadRoutes from "./Routes/upload.js";
 import recordRoutes from "./Routes/records.js";
 import dotenv from "dotenv";
 dotenv.config();
