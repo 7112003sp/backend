@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 import cors from "cors";
 import uploadRoutes from "./routes/upload.js";
 import recordRoutes from "./Routes/records.js";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose
-  .connect(
-    "mongodb+srv://surya:surya%40123@cluster0.pdqwnfb.mongodb.net/movies"
-  )
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");
   })
@@ -22,4 +22,6 @@ mongoose
 app.use("/api/upload", uploadRoutes);
 app.use("/api/records", recordRoutes);
 
-app.listen(5005, () => console.log("Backend running on 5000"));
+app.listen(process.env.PORT || 5005, () =>
+  console.log("Backend running")
+);
